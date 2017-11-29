@@ -1,6 +1,8 @@
 setCollegesOptions()
 
+// set options of department
 function setDepartmentsOptions(index){
+	// new array
 	var departments = new Array();
 	departments[0] = ['會計學系 ', ' 國際經營與貿易學系' , ' 國際經營與貿易學系國際企業管理全英語學士班' , ' 財稅學系' , ' 合作經濟暨社會事業經營學系' , ' 統計學系 ', ' 經濟學系' , ' 企業管理學系' , ' 行銷學系' , ' 國際企業管理學士學位學程(英語專班)' , ' 商學進修學士學位學程' , '財經法律研究所' , ' 科技管理碩士學位學程' , ' 產業碩士專班' , ' 商學專業碩士在職學位學程' , '商學博士學位學程 '];
 	departments[1] = ['機械與電腦輔助工程學系 ', ' 纖維與複合材料學系 ', ' 工業工程與系統管理學系 ', ' 化學工程學系 ', ' 航太與系統工程學系 ', ' 精密系統設計學士學位學程 ', '電聲碩士學位學程 ', ' 綠色能源科技碩士學位學程 ', ' 創意設計碩士學位學程 ', ' 材料與製造工程碩士在職專班 ', ' 智能製造與工程管理碩士在職學位學程 ', '機械與航空工程博士學位學程 '];	
@@ -15,18 +17,26 @@ function setDepartmentsOptions(index){
 	departments[10] = ['(現無)'];
 	departments[11] = ['通識教育中心 ', ' 雲端學院 ', '外語教學中心 ', ' 國語文教學中心 ', '全校國際生大一不分系學士班 '];
 
+	// get the select object
 	var collegeSelect = document.getElementById('college');
 	var departmentSelect = document.getElementById('department');
+	// fill the options
 	fill_content(departments[index], departmentSelect);
 }
 
+// set options of college
 function setCollegesOptions() {
+	// new array
 	var colleges = ['商學院', '工學院', '建設學院', '金融學院', '建築專業學院', '國際科技與管理學院', '資電學院', '人文社會學院', '理學院', '經營管理學院', '跨領域設計學院', '跨科系學習'];
+	// get the select object
 	var collegeSelect = document.getElementById('college');
+	// fill the options
 	fill_content(colleges, collegeSelect);
+	// set the corresponding department options
 	setDepartmentsOptions(0);
 }
 
+// fill options
 function fill_content(array, select) {
 	var optionFormat = '<option value="';
 	var optionFormatContent = '">';
